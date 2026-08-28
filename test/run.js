@@ -151,17 +151,14 @@ const STRUCTURAL = new Set(['island:for-bindings-close']);
  *  temps qu'elles soient corrigées. Chacune doit être observée : si elle
  *  disparaît, le test le dit, pour qu'on retire l'exemption.
  *
- *  `_:label` en position de terme (hors îlot) : la fiche ldpy/002 le prévoit
- *  et les quatre backends le colorent, mais le TRANSPILEUR ne le reconnaît
- *  pas — il recopie `bn = _:station` tel quel, et le module émis ne compile
- *  pas (`SyntaxError`), sans qu'aucune erreur ldpy ne soit levée. Le pname
- *  voisin (`pn = ex:Sensor`), lui, est bien traité. C'est donc le transpileur
- *  qu'il faut corriger, pas la coloration. */
-const DIVERGENCES = [
-    // le groupe 1 délimite la région tolérée
-    { re: /(?:=|[(,])\s*(_:\w+)/g, seen: false,
-      why: '`_:label` en position de terme — non transpilé (défaut de ldpy)' },
-];
+ *  Vide — et c'est le but. La seule entrée qu'a connue cette liste
+ *  (`_:label` en position de terme, que les quatre backends coloraient et que
+ *  le transpileur recopiait tel quel en émettant du Python invalide, EN
+ *  SILENCE) a été corrigée dans ldpy le 2026-08-29 : `_:{expr}` y est
+ *  désormais transpilé, et `_:label` hors d'un îlot lève une erreur qui
+ *  nomme les deux formes correctes (fiches ldpy/002 et ldpy/021). La fixture
+ *  de conformité utilise donc `_:{…}` hors des îlots. */
+const DIVERGENCES = [];   // le groupe 1 d'une entrée délimite la région tolérée
 
 /** Les caractères couverts par une divergence connue. */
 function exemptChars(src) {

@@ -10,7 +10,7 @@ nom = "capteur"
 
 iri = <http://example.org/x>
 pn = ex:Sensor
-bn = _:station
+bn = _:{"station"}
 lit = "chat"@fr
 typed = "5"^^xsd:integer
 tpl = f<http://example.org/s/{nom}>
@@ -23,9 +23,9 @@ g1 = g{ ex:s a ex:Sensor ;
 def obs(ident, valeur):
     return g{ f<http://example.org/s/{ident}> ex:v {valeur} }
 
-appel = obs(ex:x, _:bn)
+appel = obs(ex:x, _:{bn})
 liste = [ex:a, ex:b]
-paire = (ex:a, _:b2)
+paire = (ex:a, _:{2})
 noeud = f{ "n" + str(1) }
 
 @graph as courant
