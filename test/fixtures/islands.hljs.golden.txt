@@ -1,0 +1,422 @@
+# highlight.js
+0 "@" meta
+7 " " -
+8 "s" type
+12 ":" punctuation
+13 " " -
+14 "<" symbol
+42 " " -
+43 "." punctuation
+44 "\n" -
+45 "@" meta
+52 " " -
+53 ":" punctuation
+54 " " -
+55 "<" symbol
+76 " " -
+77 "." punctuation
+78 "\n" -
+79 "@" meta
+84 " " -
+85 "<" symbol
+106 " " -
+107 "." punctuation
+108 "\n" -
+114 "<" symbol
+136 "\n" -
+141 "s" type
+145 ":" punctuation
+146 "S" title
+152 "\n" -
+158 "_" punctuation
+160 "s" symbol
+168 "\n" -
+174 "_" punctuation
+176 "{" symbol
+179 "\n" -
+186 "\"" string
+192 "@" punctuation
+193 "f" built_in
+195 "\n" -
+202 "\"" string
+205 "^" punctuation
+207 "x" type
+210 ":" punctuation
+211 "i" title
+218 "\n" -
+226 "\"" string
+229 "^" punctuation
+231 "<" symbol
+272 "\n" -
+278 "g" keyword
+279 "{" punctuation
+280 " " -
+281 "f" keyword
+282 "<" punctuation
+283 "h" symbol
+309 "{" punctuation
+310 "t" symbol
+311 "}" punctuation
+313 " " -
+314 "a" keyword
+315 " " -
+316 "s" type
+320 ":" punctuation
+321 "S" title
+327 " " -
+328 ";" punctuation
+329 "\n" -
+338 "s" type
+342 ":" punctuation
+343 "m" title
+358 " " -
+359 "[" punctuation
+360 " " -
+361 "s" type
+365 ":" punctuation
+366 "h" title
+381 " " -
+382 "{" punctuation
+383 "n" -
+386 "}" punctuation
+387 " " -
+388 "]" punctuation
+389 " " -
+390 ";" punctuation
+391 "\n" -
+400 ":" punctuation
+401 "p" title
+402 " " -
+403 "\"" string
+408 "@" punctuation
+409 "e" built_in
+411 "," punctuation
+412 " " -
+413 "\"" string
+416 "^" punctuation
+418 "x" type
+421 ":" punctuation
+422 "i" title
+425 "," punctuation
+426 " " -
+427 "t" literal
+431 " " -
+432 "." punctuation
+433 "\n" -
+442 "_" punctuation
+444 "b" symbol
+445 " " -
+446 "s" type
+450 ":" punctuation
+451 "o" title
+454 " " -
+455 "?" variable
+457 " " -
+458 "}" punctuation
+459 "\n" -
+461 "d" keyword
+464 " " -
+465 "o" title function_
+476 "(" -
+477 "s" params
+493 ")" -
+500 "r" keyword
+506 " " -
+507 "g" keyword
+508 "{" punctuation
+509 " " -
+510 "f" keyword
+511 "<" punctuation
+512 "h" symbol
+538 "{" punctuation
+539 "s" symbol
+548 "}" punctuation
+550 " " -
+551 "s" type
+555 ":" punctuation
+556 "v" title
+557 " " -
+558 "{" punctuation
+559 "v" -
+564 "}" punctuation
+565 " " -
+566 "}" punctuation
+567 "\n" -
+588 "s" type
+592 ":" punctuation
+593 "x" title
+594 "," -
+596 "_" punctuation
+598 "b" symbol
+600 ")" -
+609 "s" type
+613 ":" punctuation
+614 "a" title
+615 "," -
+617 "s" type
+621 ":" punctuation
+622 "b" title
+623 "]" -
+632 "s" type
+636 ":" punctuation
+637 "a" title
+638 "," -
+640 "_" punctuation
+642 "b" symbol
+644 ")" -
+654 "f" keyword
+655 "{" punctuation
+656 " " -
+657 "\"" string
+660 " " -
+663 "s" built_in
+666 "(" -
+667 "1" number
+668 ")" -
+670 "}" punctuation
+671 "\n" -
+680 "?" keyword
+681 "{" punctuation
+682 " " -
+685 "}" punctuation
+686 "\n" -
+695 "e" keyword
+696 "{" punctuation
+697 " " -
+698 "S" built_in
+701 "(" punctuation
+702 "?" variable
+707 ")" punctuation
+708 " " -
+709 "}" punctuation
+710 "\n" -
+717 " " symbol
+718 "e" keyword
+719 "<" punctuation
+720 "h" symbol
+739 "{" punctuation
+740 "t" symbol
+741 "}" punctuation
+743 "\n" -
+757 "0" number
+758 "]" -
+761 "#" comment
+785 "\n" -
+786 "f" keyword
+790 " " -
+807 "i" keyword
+813 " " -
+825 "b" type
+830 ":" punctuation
+831 "," -
+833 "u" type
+837 ":" punctuation
+838 " " -
+839 "a" keyword
+841 " " -
+842 "u" type
+843 ":" punctuation
+844 "\n" -
+852 "\"" string
+865 "\n" -
+866 "@" meta
+873 " " -
+874 "d" type
+877 ":" punctuation
+878 " " -
+879 "f" keyword
+880 "<" punctuation
+881 "h" symbol
+888 "{" punctuation
+889 "h" symbol
+893 "}" punctuation
+894 "/" symbol
+898 ">" punctuation
+899 " " -
+900 "." punctuation
+901 "\n" -
+902 "@" meta
+908 " " -
+909 "a" keyword
+911 " " -
+914 "@" meta
+920 " " -
+921 "<" symbol
+934 " " -
+935 "a" keyword
+937 " " -
+944 "@" meta
+950 " " -
+951 "s" variable language_
+955 "." -
+962 "g" keyword
+968 " " -
+969 "@" meta
+975 " " -
+976 "a" keyword
+978 " " -
+986 "n" keyword
+994 " " -
+995 "@" meta
+1004 " " -
+1009 "@" meta
+1018 " " -
+1019 "a" keyword
+1021 " " -
+1024 "+" keyword
+1025 "{" punctuation
+1026 " " -
+1027 "e" type
+1029 ":" punctuation
+1030 "s" title
+1031 " " -
+1032 "e" type
+1034 ":" punctuation
+1035 "p" title
+1036 " " -
+1037 "1" number
+1038 " " -
+1039 ";" punctuation
+1040 " " -
+1041 "e" type
+1043 ":" punctuation
+1044 "q" title
+1045 " " -
+1046 "\"" string
+1052 "@" punctuation
+1053 "f" built_in
+1055 " " -
+1056 "}" punctuation
+1057 "\n" -
+1058 "-" keyword
+1059 "{" punctuation
+1060 " " -
+1061 "e" type
+1063 ":" punctuation
+1064 "s" title
+1065 " " -
+1066 "e" type
+1068 ":" punctuation
+1069 "p" title
+1070 " " -
+1071 "?" variable
+1075 " " -
+1076 "}" punctuation
+1077 "(" -
+1095 "l" built_in
+1099 "(" -
+1100 "m" keyword
+1101 "{" punctuation
+1102 " " -
+1103 "?" variable
+1105 " " -
+1106 "a" keyword
+1107 " " -
+1108 "e" type
+1110 ":" punctuation
+1111 "S" title
+1117 " " -
+1118 ";" punctuation
+1119 " " -
+1120 "e" type
+1122 ":" punctuation
+1123 "v" title
+1124 " " -
+1125 "?" variable
+1127 " " -
+1128 "}" punctuation
+1129 ")" -
+1139 "t" built_in
+1144 "(" -
+1148 "f" keyword
+1151 " " -
+1154 "i" keyword
+1156 " " -
+1157 "s" keyword
+1158 "{" punctuation
+1159 " " -
+1160 "S" keyword
+1166 " " -
+1167 "?" variable
+1169 " " -
+1170 "W" keyword
+1175 " " -
+1176 "{" punctuation
+1177 " " -
+1178 "?" variable
+1180 " " -
+1181 "a" keyword
+1182 " " -
+1183 "{" punctuation
+1184 "c" -
+1187 "}" punctuation
+1188 " " -
+1189 "." punctuation
+1190 " " -
+1191 "{" punctuation
+1192 " " -
+1193 "S" keyword
+1199 " " -
+1200 "?" variable
+1202 " " -
+1203 "W" keyword
+1208 " " -
+1209 "{" punctuation
+1210 " " -
+1211 "?" variable
+1213 " " -
+1214 "?" variable
+1216 " " -
+1217 "?" variable
+1219 " " -
+1220 "}" punctuation
+1221 " " -
+1222 "}" punctuation
+1223 " " -
+1224 "}" punctuation
+1225 " " -
+1226 "}" punctuation
+1227 "]" -
+1229 "f" keyword
+1232 " " -
+1233 "@" meta
+1242 " " -
+1243 "a" keyword
+1245 " " -
+1246 "r" variable
+1249 " " -
+1250 "i" keyword
+1252 " " -
+1253 "m" keyword
+1254 "{" punctuation
+1255 " " -
+1256 "?" variable
+1258 " " -
+1259 "e" type
+1261 ":" punctuation
+1262 "r" title
+1269 " " -
+1270 "?" variable
+1272 " " -
+1273 "}" punctuation
+1274 ":" -
+1280 "+" keyword
+1281 "{" punctuation
+1282 " " -
+1283 "?" variable
+1285 " " -
+1286 "e" type
+1288 ":" punctuation
+1289 "h" title
+1297 " " -
+1298 "e" keyword
+1299 "{" punctuation
+1300 " " -
+1301 "?" variable
+1303 " " -
+1306 "2" number
+1307 " " -
+1308 "}" punctuation
+1309 " " -
+1310 "}" punctuation
+1311 "\n" -

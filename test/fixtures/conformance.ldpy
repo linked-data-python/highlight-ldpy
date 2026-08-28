@@ -1,0 +1,39 @@
+# Fixture de CONFORMITÉ : contrairement à islands.ldpy (fixture de grammaire),
+# ce fichier TRANSPILE. Le transpileur peut donc servir d'arbitre : sa
+# LanguageMap dit où sont les îlots, et chaque backend doit tomber d'accord.
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://example.org/> .
+
+seuil = 5
+nom = "capteur"
+
+iri = <http://example.org/x>
+pn = ex:Sensor
+bn = _:station
+lit = "chat"@fr
+typed = "5"^^xsd:integer
+tpl = f<http://example.org/s/{nom}>
+
+g1 = g{ ex:s a ex:Sensor ;
+        ex:v {seuil} ;
+        ex:l "val"@en, "3"^^xsd:int, true .
+        _:b ex:obs ?x }
+
+def obs(ident, valeur):
+    return g{ f<http://example.org/s/{ident}> ex:v {valeur} }
+
+appel = obs(ex:x, _:bn)
+liste = [ex:a, ex:b]
+paire = (ex:a, _:b2)
+noeud = f{ "n" + str(1) }
+
+@graph as courant
++{ ex:s ex:p 1 ; ex:q "deux"@fr }
+-{ ex:s ex:p ?any }
+
+lus = list(m{ ?s a ex:Sensor ; ex:v ?v })
+sols = s{ SELECT ?s WHERE { ?s a ex:Sensor } }
+
+for @bindings as ligne in m{ ?s ex:v ?v }:
+    +{ ?s ex:double e{ ?v * 2 } }
