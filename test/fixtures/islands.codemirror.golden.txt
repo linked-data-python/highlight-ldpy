@@ -1,0 +1,464 @@
+# CodeMirror
+0 "@" ldpyDirective
+7 " " -
+8 "s" ldpyPnameLocal
+13 " " -
+14 "<" ldpyIri
+42 " " -
+43 "." ldpyTripleSep
+44 "\n" -
+45 "@" ldpyDirective
+52 " " -
+53 ":" ldpyPnameLocal
+54 " " -
+55 "<" ldpyIri
+76 " " -
+77 "." ldpyTripleSep
+78 "\n" -
+79 "@" ldpyDirective
+84 " " -
+85 "<" ldpyIri
+106 " " -
+107 "." ldpyTripleSep
+108 "\n" -
+110 "t" variable
+111 " " -
+112 "=" operator
+113 " " -
+114 "<" ldpyIri
+136 "\n" -
+137 "u" variable
+138 " " -
+139 "=" operator
+140 " " -
+141 "s" ldpyPnameLocal
+152 "\n" -
+153 "b" variable
+155 " " -
+156 "=" operator
+157 " " -
+158 "_" ldpyBnodeName
+168 "\n" -
+169 "b" variable
+171 " " -
+172 "=" operator
+173 " " -
+174 "_" ldpyBnodeName
+179 "\n" -
+180 "l" variable
+183 " " -
+184 "=" operator
+185 " " -
+186 "\"" string
+192 "@" ldpyLangtag
+195 "\n" -
+196 "n" variable
+199 " " -
+200 "=" operator
+201 " " -
+202 "\"" string
+205 "^" ldpyDatatypePunct
+207 "x" variable
+210 ":" -
+211 "i" variable
+218 "\n" -
+219 "i" variable
+223 " " -
+224 "=" operator
+225 " " -
+226 "\"" string
+229 "^" ldpyDatatypePunct
+231 "<" ldpyIri
+272 "\n" -
+273 "g" variable
+275 " " -
+276 "=" operator
+277 " " -
+278 "g" ldpySigil
+280 " " -
+281 "f" ldpySigil
+283 "h" ldpyIri
+309 "{" ldpyInterpPunct
+310 "t" variable
+311 "}" ldpyInterpPunct
+312 ">" ldpyIslandPunct
+313 " " -
+314 "a" ldpyKeywordA
+315 " " -
+316 "s" ldpyPnameLocal
+327 " " -
+328 ";" ldpyTripleSep
+329 "\n" -
+338 "s" ldpyPnameLocal
+358 " " -
+359 "[" ldpyBracket
+360 " " -
+361 "s" ldpyPnameLocal
+381 " " -
+382 "{" ldpyInterpPunct
+383 "n" variable
+386 "}" ldpyInterpPunct
+387 " " -
+388 "]" ldpyBracket
+389 " " -
+390 ";" ldpyTripleSep
+391 "\n" -
+400 ":" ldpyPnameLocal
+402 " " -
+403 "\"" ldpyString
+408 "@" ldpyLangtag
+411 "," ldpyTripleSep
+412 " " -
+413 "\"" ldpyString
+416 "^" ldpyDatatypePunct
+418 "x" ldpyPnameLocal
+425 "," ldpyTripleSep
+426 " " -
+427 "t" ldpyBoolean
+431 " " -
+432 "." ldpyTripleSep
+433 "\n" -
+442 "_" ldpyBnodeName
+445 " " -
+446 "s" ldpyPnameLocal
+454 " " -
+455 "?" ldpyVar
+457 " " -
+458 "}" ldpyIslandPunct
+459 "\n" -
+461 "d" keyword
+464 " " -
+465 "o" def
+476 "(" -
+477 "s" variable
+486 "," -
+488 "v" variable
+493 ")" -
+500 "r" keyword
+506 " " -
+507 "g" ldpySigil
+509 " " -
+510 "f" ldpySigil
+512 "h" ldpyIri
+538 "{" ldpyInterpPunct
+539 "s" variable
+548 "}" ldpyInterpPunct
+549 ">" ldpyIslandPunct
+550 " " -
+551 "s" ldpyPnameLocal
+557 " " -
+558 "{" ldpyInterpPunct
+559 "v" variable
+564 "}" ldpyInterpPunct
+565 " " -
+566 "}" ldpyIslandPunct
+567 "\n" -
+569 "c" variable
+573 " " -
+574 "=" operator
+575 " " -
+576 "o" variable
+587 "(" -
+588 "s" ldpyPnameLocal
+594 "," -
+596 "_" ldpyBnodeName
+600 ")" -
+602 "l" variable
+605 " " -
+606 "=" operator
+607 " " -
+609 "s" ldpyPnameLocal
+615 "," -
+617 "s" ldpyPnameLocal
+623 "]" -
+625 "t" variable
+628 " " -
+629 "=" operator
+630 " " -
+632 "s" ldpyPnameLocal
+638 "," -
+640 "_" ldpyBnodeName
+644 ")" -
+646 "f" variable
+651 " " -
+652 "=" operator
+653 " " -
+654 "f" ldpySigil
+656 " " -
+657 "\"" string
+660 " " -
+661 "+" operator
+662 " " -
+663 "s" builtin
+666 "(" -
+667 "1" number
+668 ")" -
+670 "}" ldpyInterpPunct
+671 "\n" -
+672 "q" variable
+677 " " -
+678 "=" operator
+679 " " -
+680 "?" ldpySigil
+682 " " -
+683 "t" variable
+684 " " -
+685 "}" ldpyInterpPunct
+686 "\n" -
+687 "e" variable
+692 " " -
+693 "=" operator
+694 " " -
+695 "e" ldpySigil
+697 " " -
+698 "S" ldpyKeywordSparql
+701 "(" ldpyBracket
+702 "?" ldpyVar
+707 ")" ldpyBracket
+708 " " -
+709 "}" ldpyIslandPunct
+710 "\n" -
+711 "e" variable
+715 " " -
+716 "=" operator
+717 " " -
+718 "e" ldpySigil
+720 "h" ldpyIri
+739 "{" ldpyInterpPunct
+740 "t" variable
+741 "}" ldpyInterpPunct
+742 ">" ldpyIslandPunct
+743 "\n" -
+744 "f" variable
+749 " " -
+750 "=" operator
+751 " " -
+752 "c" variable
+756 "[" -
+757 "0" number
+758 "]" -
+761 "#" comment
+785 "\n" -
+786 "f" keyword
+790 " " -
+791 "m" variable
+800 "." -
+801 "v" property
+806 " " -
+807 "i" keyword
+813 " " -
+814 "s" variable
+823 "," -
+825 "b" ldpyPnamePrefix
+831 "," -
+833 "u" ldpyPnamePrefix
+838 " " -
+839 "a" keyword
+841 " " -
+842 "u" ldpyPnamePrefix
+844 "\n" -
+845 "h" variable
+849 " " -
+850 "=" operator
+851 " " -
+852 "\"" string
+865 "\n" -
+866 "@" ldpyDirective
+873 " " -
+874 "d" ldpyPnameLocal
+878 " " -
+879 "f" ldpySigil
+881 "h" ldpyIri
+888 "{" ldpyInterpPunct
+889 "h" variable
+893 "}" ldpyInterpPunct
+894 "/" ldpyIri
+898 ">" ldpyIslandPunct
+899 " " -
+900 "." ldpyTripleSep
+901 "\n" -
+902 "@" ldpyDirective
+908 " " -
+909 "a" ldpyModifier
+911 " " -
+912 "g" ldpyPnameLocal
+913 "\n" -
+914 "@" ldpyDirective
+920 " " -
+921 "<" ldpyIri
+934 " " -
+935 "a" ldpyModifier
+937 " " -
+938 "n" ldpyPnameLocal
+943 "\n" -
+944 "@" ldpyDirective
+950 " " -
+951 "s" ldpyPnameLocal
+955 "." ldpyTripleSep
+956 "s" variable
+961 "\n" -
+962 "g" keyword
+968 " " -
+969 "@" operator
+970 "g" variable
+975 " " -
+976 "a" keyword
+978 " " -
+979 "c" variable
+985 "\n" -
+986 "n" keyword
+994 " " -
+995 "@" operator
+996 "b" variable
+1004 " " -
+1005 "s" variable
+1008 "\n" -
+1009 "@" ldpyDirective
+1018 " " -
+1019 "a" ldpyModifier
+1021 " " -
+1022 "b" ldpyPnameLocal
+1023 "\n" -
+1024 "+" ldpySigil
+1026 " " -
+1027 "e" ldpyPnameLocal
+1031 " " -
+1032 "e" ldpyPnameLocal
+1036 " " -
+1037 "1" ldpyNumber
+1038 " " -
+1039 ";" ldpyTripleSep
+1040 " " -
+1041 "e" ldpyPnameLocal
+1045 " " -
+1046 "\"" ldpyString
+1052 "@" ldpyLangtag
+1055 " " -
+1056 "}" ldpyIslandPunct
+1057 "\n" -
+1058 "-" ldpySigil
+1060 " " -
+1061 "e" ldpyPnameLocal
+1065 " " -
+1066 "e" ldpyPnameLocal
+1070 " " -
+1071 "?" ldpyVar
+1075 " " -
+1076 "}" ldpyIslandPunct
+1077 "(" -
+1078 "a" variable
+1083 ")" -
+1085 "s" variable
+1092 " " -
+1093 "=" operator
+1094 " " -
+1095 "l" builtin
+1099 "(" -
+1100 "m" ldpySigil
+1102 " " -
+1103 "?" ldpyVar
+1105 " " -
+1106 "a" ldpyKeywordA
+1107 " " -
+1108 "e" ldpyPnameLocal
+1117 " " -
+1118 ";" ldpyTripleSep
+1119 " " -
+1120 "e" ldpyPnameLocal
+1124 " " -
+1125 "?" ldpyVar
+1127 " " -
+1128 "}" ldpyIslandPunct
+1129 ")" -
+1131 "r" variable
+1135 " " -
+1136 "=" operator
+1137 " " -
+1139 "t" builtin
+1144 "(" -
+1145 "r" variable
+1146 ")" -
+1148 "f" keyword
+1151 " " -
+1152 "r" variable
+1153 " " -
+1154 "i" keyword
+1156 " " -
+1157 "s" ldpySigil
+1159 " " -
+1160 "S" ldpyKeywordSparql
+1166 " " -
+1167 "?" ldpyVar
+1169 " " -
+1170 "W" ldpyKeywordSparql
+1175 " " -
+1176 "{" ldpyBracket
+1177 " " -
+1178 "?" ldpyVar
+1180 " " -
+1181 "a" ldpyKeywordSparql
+1182 " " -
+1183 "{" ldpyBracket
+1184 "c" ldpyPnameLocal
+1187 "}" ldpyBracket
+1188 " " -
+1189 "." ldpyTripleSep
+1190 " " -
+1191 "{" ldpyBracket
+1192 " " -
+1193 "S" ldpyKeywordSparql
+1199 " " -
+1200 "?" ldpyVar
+1202 " " -
+1203 "W" ldpyKeywordSparql
+1208 " " -
+1209 "{" ldpyBracket
+1210 " " -
+1211 "?" ldpyVar
+1213 " " -
+1214 "?" ldpyVar
+1216 " " -
+1217 "?" ldpyVar
+1219 " " -
+1220 "}" ldpyBracket
+1221 " " -
+1222 "}" ldpyBracket
+1223 " " -
+1224 "}" ldpyBracket
+1225 " " -
+1226 "}" ldpyIslandPunct
+1227 "]" -
+1229 "f" keyword
+1232 " " -
+1233 "@" ldpyDirective
+1249 " " -
+1250 "i" keyword
+1252 " " -
+1253 "m" ldpySigil
+1255 " " -
+1256 "?" ldpyVar
+1258 " " -
+1259 "e" ldpyPnameLocal
+1269 " " -
+1270 "?" ldpyVar
+1272 " " -
+1273 "}" ldpyIslandPunct
+1274 ":" -
+1280 "+" ldpySigil
+1282 " " -
+1283 "?" ldpyVar
+1285 " " -
+1286 "e" ldpyPnameLocal
+1297 " " -
+1298 "e" ldpySigil
+1300 " " -
+1301 "?" ldpyVar
+1303 " " -
+1304 "*" ldpyInvalid
+1305 " " -
+1306 "2" ldpyNumber
+1307 " " -
+1308 "}" ldpyIslandPunct
+1309 " " -
+1310 "}" ldpyIslandPunct
+1311 "\n" -

@@ -1,7 +1,9 @@
 'use strict';
 /**
  * linked-data-python-highlight — la coloration de Linked-Data Python,
- * une spécification et quatre moteurs.
+ * une spécification et cinq moteurs (le cinquième, Pygments, vit dans le
+ * paquet Python : il n'a pas besoin de cette spécification, il LIT le
+ * transpileur).
  *
  * Voir DESIGN_CHOICES/ldpy/021 dans l'espace de travail de recherche.
  */
@@ -14,4 +16,6 @@ module.exports = {
     highlightjs: require('./highlightjs'),
     /** Grammaire Prism : `registerLdpy(Prism)`. */
     prism: require('./prism'),
+    /** Langage CodeMirror 6 : `StreamLanguage.define(ldpy)`. */
+    codemirror: require('./codemirror'),
 };

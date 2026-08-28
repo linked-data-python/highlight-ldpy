@@ -11,7 +11,9 @@
  *    ailleurs, ni en manquer un. Le transpileur est l'arbitre, comme il l'est
  *    déjà pour le lexer Pygments (qui, lui, le LIT).
  * 4. REGEX   — toute expression de src/islands.js compile sous V8 ET sous
- *    Oniguruma : c'est la condition pour qu'elle serve les trois moteurs.
+ *    Oniguruma : c'est la condition pour qu'elle serve les moteurs à regex.
+ *
+ * Quatre backends : TextMate, highlight.js, Prism, CodeMirror 6.
  */
 'use strict';
 const cp = require('child_process');
@@ -41,6 +43,11 @@ require('prismjs/components/prism-sparql');
 const prismLdpy = require('../src/prism');
 prismLdpy(Prism);
 
+const { python: cmPython } = require('@codemirror/legacy-modes/mode/python');
+const cmLdpy = require('../src/codemirror').build();
+const { charTokens: cmCharTokens, tokens: cmTokens } =
+    require('./lib/codemirror-tokens');
+
 const tm = require('./lib/textmate');
 const { charScopes: hljsScopes } = require('./lib/hljs-tokens');
 const { leaves, charTypes, ldpyChars } = require('./lib/prism-tokens');
@@ -69,6 +76,16 @@ function checkParity() {
             fail(`parité Prism ${f}, ligne ${src.slice(0, i).split('\n').length} : ` +
                 `${JSON.stringify(src[i])} python=${a[i]} ldpy=${b[i]}`);
         } else ok(`parité Prism : ${f}`);
+    }
+    for (const f of PURE) {
+        const src = read(f);
+        const a = cmCharTokens(cmPython, src);
+        const b = cmCharTokens(cmLdpy, src);
+        const i = a.findIndex((t, n) => t !== b[n]);
+        if (i >= 0) {
+            fail(`parité CodeMirror ${f}, ligne ${src.slice(0, i).split('\n').length} : ` +
+                `${JSON.stringify(src.slice(i, i + 16))} python=${a[i]} ldpy=${b[i]}`);
+        } else ok(`parité CodeMirror : ${f}`);
     }
 }
 
@@ -108,6 +125,9 @@ function checkGoldens() {
     const pt = charTypes(Prism, Prism.languages.ldpy, src);
     checkGolden('Prism', 'islands.prism.golden.txt',
         [...src].map((c, i) => [c, pt[i]]));
+    const ct = cmCharTokens(cmLdpy, src);
+    checkGolden('CodeMirror', 'islands.codemirror.golden.txt',
+        [...src].map((c, i) => [c, ct[i]]));
 }
 
 // ----------------------------------------- 3. conformité au transpileur
@@ -195,6 +215,7 @@ async function checkConformance() {
             return [...src].map((c, i) => /(^|\s)ldpy-/.test(sc[i] || ''));
         })(),
         Prism: ldpyChars(Prism.tokenize(src, Prism.languages.ldpy)),
+        CodeMirror: cmCharTokens(cmLdpy, src).map((t) => /^ldpy/.test(t || '')),
     };
 
     for (const [name, marks] of Object.entries(backends)) {

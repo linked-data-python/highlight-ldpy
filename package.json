@@ -1,33 +1,66 @@
 {
   "name": "linked-data-python-highlight",
   "version": "0.1.0",
-  "description": "Syntax highlighting for Linked-Data Python (.ldpy): one island lexicon, four backends (TextMate, highlight.js, Prism, Pygments).",
+  "description": "Syntax highlighting for Linked-Data Python (.ldpy): one island lexicon, five backends (TextMate, highlight.js, Prism, CodeMirror 6, Pygments).",
   "license": "Apache-2.0",
   "author": "Maxime Lefrançois",
   "repository": "gitlab:coswot/highlight-ldpy",
-  "keywords": ["ldpy", "linked-data-python", "rdf", "turtle", "sparql", "syntax-highlighting", "highlight.js", "prism", "textmate"],
+  "keywords": [
+    "codemirror",
+    "highlight.js",
+    "ldpy",
+    "linked-data-python",
+    "prism",
+    "rdf",
+    "sparql",
+    "syntax-highlighting",
+    "textmate",
+    "turtle"
+  ],
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
     "./highlightjs": "./src/highlightjs.js",
     "./prism": "./src/prism.js",
     "./textmate": "./src/textmate.js",
-    "./islands": "./src/islands.js"
+    "./islands": "./src/islands.js",
+    "./codemirror": "./src/codemirror.js"
   },
-  "files": ["src/", "vendor/", "README.md", "LICENSE.md"],
+  "files": [
+    "src/",
+    "vendor/",
+    "README.md",
+    "LICENSE.md"
+  ],
   "scripts": {
     "generate": "node src/cli-generate.js",
     "test": "node test/run.js"
   },
   "peerDependencies": {
     "highlight.js": "^11.0.0",
-    "prismjs": "^1.29.0"
+    "prismjs": "^1.29.0",
+    "@codemirror/language": "^6.0.0",
+    "@codemirror/legacy-modes": "^6.0.0"
   },
   "peerDependenciesMeta": {
-    "highlight.js": { "optional": true },
-    "prismjs": { "optional": true }
+    "highlight.js": {
+      "optional": true
+    },
+    "prismjs": {
+      "optional": true
+    },
+    "@codemirror/language": {
+      "optional": true
+    },
+    "@codemirror/legacy-modes": {
+      "optional": true
+    }
   },
   "devDependencies": {
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/legacy-modes": "^6.5.3",
+    "@codemirror/state": "^6.7.1",
+    "@lezer/highlight": "^1.2.3",
     "highlight.js": "^11.11.1",
     "prismjs": "^1.30.0",
     "vscode-oniguruma": "^2.0.1",
