@@ -2,7 +2,7 @@
 /**
  * LA description des îlots ldpy, une seule fois.
  *
- * Doctrine (DESIGN_CHOICES/ldpy/021) : jamais de deuxième spécification de la
+ * Doctrine (ldpy/021) : jamais de deuxième spécification de la
  * lexique. Le surligneur Pygments l'obtient en *étant* le transpileur (il lit
  * la LanguageMap) ; côté JavaScript, aucun backend ne peut appeler le
  * transpileur Python, alors ce module tient le rôle de source unique : les

@@ -5,7 +5,7 @@
  * paquet Python : il n'a pas besoin de cette spécification, il LIT le
  * transpileur).
  *
- * Voir DESIGN_CHOICES/ldpy/021 dans l'espace de travail de recherche.
+ * Voir ldpy/021 dans l'espace de travail de recherche.
  */
 module.exports = {
     /** LA description des îlots : les regex de la fiche ldpy/002, une fois. */

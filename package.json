@@ -4,7 +4,7 @@
   "description": "Syntax highlighting for Linked-Data Python (.ldpy): one island lexicon, five backends (TextMate, highlight.js, Prism, CodeMirror 6, Pygments).",
   "license": "Apache-2.0",
   "author": "Maxime Lefrançois",
-  "repository": "gitlab:coswot/highlight-ldpy",
+  "repository": "github:linked-data-python/highlight-ldpy",
   "keywords": [
     "codemirror",
     "highlight.js",

@@ -2,9 +2,9 @@
 /**
  * Génère la grammaire TextMate de ldpy : MagicPython officiel (vendored dans
  * vendor/) + îlots RDF/SPARQL, dont les règles viennent TOUTES de
- * src/islands.js (DESIGN_CHOICES/ldpy/021 — une seule spécification).
+ * src/islands.js (ldpy/021 — une seule spécification).
  *
- * Doctrine (DESIGN_CHOICES/vscode/102, règles DESIGN_CHOICES/ldpy/002) :
+ * Doctrine (vscode/102, règles ldpy/002) :
  * un fichier Python pur doit être coloré EXACTEMENT comme en .py. Les règles
  * d'îlot ne s'appliquent donc qu'à des positions où la construction serait
  * invalide en Python pur :

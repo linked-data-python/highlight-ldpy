@@ -1,10 +1,10 @@
 # linked-data-python-highlight
 
-La coloration syntaxique de [Linked-Data Python](https://gitlab.emse.fr/) (`.ldpy`) :
+La coloration syntaxique de [Linked-Data Python](https://github.com/linked-data-python/ldpy) (`.ldpy`) :
 **une description des îlots, cinq moteurs**.
 
 ```
-src/islands.js   ← LA lexique des îlots (règles de DESIGN_CHOICES/ldpy/002)
+src/islands.js   ← LA lexique des îlots (règles de ldpy/002)
      │
      ├── src/textmate.js     → VS Code (grammaire engendrée, vendorée par vscode-ldpy)
      ├── src/highlightjs.js  → highlight.js
@@ -131,3 +131,10 @@ L'extension VS Code se construit et s'installe sans ce dépôt ; seuls
 - Une divergence connue est tolérée et *nommée* dans `test/run.js` :
   `_:label` en position de terme est coloré par les quatre moteurs, mais le
   transpileur ne le reconnaît pas — c'est lui qu'il faut corriger.
+
+## Les décisions de conception
+
+Chaque choix non trivial de ce dépôt est consigné, un fichier par décision,
+dans le dépôt [`pilotage`](https://github.com/linked-data-python/pilotage). Le code et la documentation les
+citent par identifiant — `ldpy/021`, `vscode/102` — qui se résout dans
+[`design/`](https://github.com/linked-data-python/pilotage/tree/main/design).
