@@ -24,7 +24,8 @@
     "./prism": "./src/prism.js",
     "./textmate": "./src/textmate.js",
     "./islands": "./src/islands.js",
-    "./codemirror": "./src/codemirror.js"
+    "./codemirror": "./src/codemirror.js",
+    "./vendor/*": "./vendor/*"
   },
   "files": [
     "src/",
