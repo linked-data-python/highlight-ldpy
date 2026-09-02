@@ -205,6 +205,12 @@ const CONTEXT_MODIFIER = `(?:(${MODIFIER_WORDS})\\s+)?`;
 const FOR_BINDINGS =
     String.raw`(?<=\bfor\s)\s*(@bindings)\b(?:\s+(as)\s+([A-Za-z_]\w*))?`;
 
+/** `as EX` d'une déclaration de préfixe (fiche 027) : `@prefix ex: <…> as EX .`
+ *  Lie l'OBJET Namespace à un nom Python, pour le code qui en a besoin
+ *  au-delà du bloc. Ancré entre le `>` de l'IRI et le `.` final : nulle part
+ *  ailleurs un `as` ne se trouve à cette place. */
+const PREFIX_AS = String.raw`(?<=>)\s+(as)\s+([A-Za-z_]\w*)(?=\s*\.)`;
+
 /** pname dans une liste d'import (fiche 013) : `brick:`, `unit: as u:`. */
 const IMPORT_PREFIX =
     `(${A.prefixDotted})?(:)` + String.raw`(?=\s*[,)\n#]|\s+as\b|\s*$)`;
@@ -281,7 +287,7 @@ module.exports = {
     SPARQL_KEYWORDS, SPARQL_GROUP_MARKERS,
     BRACE_ISLANDS, IRI_ISLANDS, TURTLE_DIRECTIVES,
     CONTEXT_DECLS, CONTEXT_GUARD, CONTEXT_MODIFIER,
-    FOR_BINDINGS, IMPORT_PREFIX, IMPORT_CONTEXT, ADD_REMOVE,
+    FOR_BINDINGS, PREFIX_AS, IMPORT_PREFIX, IMPORT_CONTEXT, ADD_REMOVE,
     SUBSCRIPT_AFTER_CLOSER, SUBSCRIPT_OPEN,
     ROLES,
 };

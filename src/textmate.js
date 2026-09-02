@@ -135,6 +135,15 @@ function directive(keyword, guard) {
                 },
             },
             { match: IRIREF, name: 'string.quoted.other.iriref.ldpy' },
+            // `as EX` (fiche 027) : avant le fourre-tout, sans quoi la
+            // clause serait marquée illégale.
+            {
+                match: String.raw`\b(as)\s+([A-Za-z_]\w*)`,
+                captures: {
+                    1: { name: 'keyword.control.flow.python' },
+                    2: { name: 'variable.other.ldpy' },
+                },
+            },
             { match: String.raw`\.`, name: 'punctuation.terminator.directive.ldpy' },
             { match: String.raw`[^\s#]+`, name: 'invalid.illegal.directive.ldpy' },
         ],

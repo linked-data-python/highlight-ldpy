@@ -276,6 +276,12 @@ function build(hljs, scopes) {
         },
     ];
 
+    /** `as EX` d'une déclaration de préfixe (fiche 027). */
+    const prefixAs = {
+        begin: [/(?<=>)\s+/, /as/, /\s+/, new RegExp(I.A.prefix)],
+        beginScope: { 2: S('modifier'), 4: 'variable' },
+    };
+
     /** `from m import brick:, unit: as u:` (fiche 013). */
     const importPrefix = {
         begin: [I.IMPORT_CONTEXT + `(?:${I.A.prefixDotted})?`,
@@ -315,7 +321,7 @@ function build(hljs, scopes) {
 
     /** Les îlots qui valent partout, pname/bnode exclus. */
     const islandModes = [
-        addRemove, ...forBindings, importPrefix,
+        addRemove, ...forBindings, prefixAs, importPrefix,
         brace['g'], brace['m'], brace['s'], brace['e'], brace['f'], brace['?'],
         iriTemplate('f', { operandGuard: true }),
         iriTemplate('e', { operandGuard: true }),

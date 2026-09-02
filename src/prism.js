@@ -321,6 +321,14 @@ module.exports = function registerLdpy(Prism, opts = {}) {
                 rest: graphBody,
             },
         },
+        // @prefix ex: <…> as EX . (fiche 027)
+        'ldpy-prefix-as': {
+            pattern: new RegExp(I.PREFIX_AS),
+            inside: {
+                'ldpy-as': { pattern: /\bas\b/, alias: TOKEN.modifier },
+                'variable': new RegExp(`${I.A.prefix}$`),
+            },
+        },
         'ldpy-for-bindings': {
             pattern: new RegExp(String.raw`(\bfor\s+)@bindings\b(?:\s+as\s+` +
                 `(?:${I.A.prefix}))?`),
