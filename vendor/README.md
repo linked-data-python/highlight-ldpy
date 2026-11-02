@@ -14,3 +14,15 @@ recevoir exactement les mêmes scopes en `.ldpy` qu'en `.py`.
 
 Pour rafraîchir : recopier le fichier depuis une installation VS Code récente,
 mettre à jour les versions ci-dessus, puis `npm run generate && npm test`.
+
+# Grammaires SPARQL et Turtle (vendored)
+
+`sparql.tmLanguage.json` et `turtle.tmLanguage.json` sont les copies EXACTES
+des grammaires de l'extension `stardog-union.stardog-rdf-grammars` 0.2.1
+(Visual Studio Marketplace, licence Apache-2.0, texte dans
+`LICENSE-stardog-rdf-grammars.txt`), copiées le 2026-11-02.
+
+Elles colorent l'intérieur de `s{ … }` (fiche vscode/102) : `src/textmate.js`
+les reprend dans le dépôt de la grammaire ldpy, clés préfixées
+`ldpy-sparql-vendor-` et `ldpy-turtle-vendor-`, `source.turtle` résolu sur
+place, et la règle d'interpolation `{expr}` placée en tête, avant elles.

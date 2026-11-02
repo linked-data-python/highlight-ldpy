@@ -338,12 +338,41 @@ const islands = {
     },
 };
 
-// Intérieur d'un s{…} : coloration SPARQL légère, accolades équilibrées.
-// Une interpolation {expr} RE-BASCULE en Python (#expression) ; l'oracle
+// Intérieur d'un s{…} : la grammaire SPARQL du marketplace (stardog-union,
+// Apache-2.0, vendor/), elle-même posée sur sa grammaire Turtle (fiche
+// vscode/102). Ce qui reste à nous : la règle d'interpolation, EN TÊTE —
+// une interpolation {expr} RE-BASCULE en Python (#expression) ; l'oracle
 // exact du transpileur (transpile puis compile) n'existe pas en TextMate,
 // l'approximation : contenu sans variable ?/$ ni mot-clé SPARQL sur un
-// niveau d'accolades. Les cas ambigus restent colorés en groupe ; les
-// semantic tokens du LSP raffinent (fiche 102).
+// niveau d'accolades —, les f-IRI f<…{expr}…> (fiche ldpy/015), et les
+// groupes { … } équilibrés, qui reprennent le tout. Les cas ambigus
+// restent colorés en groupe ; les semantic tokens du LSP raffinent.
+function vendored(file, prefix) {
+    const vg = JSON.parse(fs.readFileSync(
+        path.join(__dirname, '..', 'vendor', file), 'utf8'));
+    const rename = (node) => {
+        if (Array.isArray(node)) return node.map(rename);
+        if (node && typeof node === 'object') {
+            const out = {};
+            for (const [k, v] of Object.entries(node)) {
+                out[k] = (k === 'include' && typeof v === 'string' && v.startsWith('#'))
+                    ? '#' + prefix + v.slice(1) : rename(v);
+            }
+            return out;
+        }
+        return node;
+    };
+    const repo = {};
+    for (const [k, v] of Object.entries(vg.repository || {})) repo[prefix + k] = rename(v);
+    return { patterns: rename(vg.patterns), repository: repo };
+}
+const TURTLE_V = vendored('turtle.tmLanguage.json', 'ldpy-turtle-vendor-');
+const SPARQL_V = vendored('sparql.tmLanguage.json', 'ldpy-sparql-vendor-');
+Object.assign(islands, TURTLE_V.repository, SPARQL_V.repository);
+islands['ldpy-turtle-vendor'] = { patterns: TURTLE_V.patterns };
+const SPARQL_PATTERNS = SPARQL_V.patterns.map((p) =>
+    (p.include === 'source.turtle' ? inc('#ldpy-turtle-vendor') : p));
+
 islands['ldpy-sparql-content'] = {
     patterns: [
         inc('#comments'),
@@ -357,24 +386,7 @@ islands['ldpy-sparql-content'] = {
             endCaptures: { 0: { name: 'punctuation.section.interpolation.end.ldpy' } },
             patterns: [inc('#expression')],
         },
-        { match: String.raw`\b(?i:` + I.SPARQL_KEYWORDS.join('|') + String.raw`)\b`,
-          name: 'keyword.control.sparql.ldpy' },
-        // fonctions intégrées : seulement devant `(`
-        { match: String.raw`\b(?i:` + I.SPARQL_FUNCTIONS.join('|') +
-              String.raw`)\b(?=\s*\()`,
-          name: 'support.function.sparql.ldpy' },
-        inc('#ldpy-sparql-var'),
-        { match: IRIREF, name: 'string.quoted.other.iriref.ldpy' },
-        {
-            match: String.raw`([A-Za-z_]\w*)?(:)([A-Za-z0-9_][\w.-]*)?`,
-            captures: {
-                1: { name: 'entity.name.type.pname.prefix.ldpy' },
-                2: { name: 'punctuation.separator.pname.ldpy' },
-                3: { name: 'entity.name.other.pname.local.ldpy' },
-            },
-        },
-        inc('#string'),
-        { match: NUMBER, name: 'constant.numeric.ldpy' },
+        inc('#ldpy-firi'),
         {
             begin: String.raw`\{`,
             end: String.raw`\}`,
@@ -382,6 +394,7 @@ islands['ldpy-sparql-content'] = {
             endCaptures: { 0: { name: 'punctuation.section.group.sparql.end.ldpy' } },
             patterns: [inc('#ldpy-sparql-content')],
         },
+        ...SPARQL_PATTERNS,
         { match: '[;,.]', name: 'punctuation.separator.triples.ldpy' },
         { match: String.raw`[()]`, name: 'punctuation.section.bnode.ldpy' },
     ],
