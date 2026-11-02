@@ -108,9 +108,13 @@ const PNAME_PARTS = `(${A.prefix})(:)(${A.localStrict})`;
 const BNODE_PARTS = `(_:)(${A.bnodeLabel})`;
 
 // garde de fermeture : l'îlot f<…>/e<…> n'est pris que si un `>` ferme sur
-// la même ligne avec le jeu de caractères IRI (interpolations {…} admises) —
-// sinon repli comparaison, comme le backtracking R3 du transpileur.
-const IRI_CLOSES = `(?=(?:${A.iriTemplateChar})*>)`;
+// la même ligne avec le jeu de caractères IRI (interpolations {…} admises),
+// et qu'aucun caractère de nom ne suit ce `>` — `f<x>y` est la comparaison
+// chaînée `f < x > y` (fiche vscode/102) — sinon repli comparaison, comme
+// le backtracking R3 du transpileur.
+/** après le `>` d'un gabarit d'IRI : pas de caractère de nom collé. */
+const NOT_NAME_AFTER = '(?![A-Za-z0-9_])';
+const IRI_CLOSES = `(?=(?:${A.iriTemplateChar})*>${NOT_NAME_AFTER})`;
 
 // pname « libre », à l'intérieur d'un îlot : préfixe et partie locale
 // facultatifs (`:x`, `ex:`, `:`), tirets et points admis en partie locale.
@@ -281,7 +285,7 @@ module.exports = {
     MODIFIER_WORDS,
     A, BT, AFTER_QUOTE,
     OPERAND, STRICT, ARGS, ARGS_FLAT, NOT_COMPARISON, NOT_IN_DEF_PARAMS,
-    IRIREF, PNAME_PARTS, BNODE_PARTS, IRI_CLOSES,
+    IRIREF, PNAME_PARTS, BNODE_PARTS, IRI_CLOSES, NOT_NAME_AFTER,
     PNAME_LOOSE, BNODE_LOOSE, VARIABLE, NUMBER, BOOLEAN, RDF_TYPE,
     LANGTAG, DATATYPE,
     SPARQL_KEYWORDS, SPARQL_GROUP_MARKERS,

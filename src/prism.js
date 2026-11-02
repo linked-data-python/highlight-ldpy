@@ -117,7 +117,7 @@ module.exports = function registerLdpy(Prism, opts = {}) {
         'ldpy-iri-body': { pattern: /[\s\S]+/, alias: TOKEN.iriref },
     };
     const iriTemplate = {
-        pattern: new RegExp(String.raw`\b[fe]<(?:${I.A.iriTemplateChar})*>`),
+        pattern: new RegExp(String.raw`\b[fe]<(?:${I.A.iriTemplateChar})*>` + I.NOT_NAME_AFTER),
         greedy: true,
         inside: iriTemplateInside,
     };
@@ -349,7 +349,7 @@ module.exports = function registerLdpy(Prism, opts = {}) {
         ...braces,
         'ldpy-iri-template-op': {
             pattern: new RegExp(`(${I.OPERAND}\\s*)` +
-                String.raw`[fe]<(?:${I.A.iriTemplateChar})*>`),
+                String.raw`[fe]<(?:${I.A.iriTemplateChar})*>` + I.NOT_NAME_AFTER),
             lookbehind: true,
             greedy: true,
             inside: iriTemplateInside,

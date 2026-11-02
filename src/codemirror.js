@@ -119,7 +119,7 @@ const RE = {
     forBindings: sticky(String.raw`@bindings\b(?:\s+as\s+[A-Za-z_]\w*)?`),
     addRemove: sticky(String.raw`[+-]\{`),
     braceIsland: sticky(String.raw`([gmsef?])\{`),
-    iriIsland: sticky(`([fe])<(?=(?:${I.A.iriTemplateChar})*>)`),
+    iriIsland: sticky(`([fe])<${I.IRI_CLOSES}`),
     iriref: sticky(I.IRIREF),
     // hors îlot : partie locale stricte, garde de la fiche 002
     pnameStrict: sticky(`(${I.A.prefix})(:)(${I.A.localStrict})`),
