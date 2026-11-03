@@ -462,3 +462,21 @@
 1309 " " -
 1310 "}" ldpyIslandPunct
 1311 "\n" -
+1312 "p" variable
+1317 " " -
+1318 "=" operator
+1319 " " -
+1320 "e" ldpyPnameLocal
+1337 "." -
+1338 "n" property
+1340 "(" -
+1343 "+" ldpySigil
+1345 " " -
+1346 "e" ldpyPnameLocal
+1353 " " -
+1354 "e" ldpyPnameLocal
+1361 " " -
+1362 "1" ldpyNumber
+1363 " " -
+1364 "}" ldpyIslandPunct
+1365 "\n" -

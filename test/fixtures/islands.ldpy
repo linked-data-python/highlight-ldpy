@@ -42,3 +42,5 @@ sensors = list(m{ ?s a ex:Sensor ; ex:v ?v })
 rows = [tuple(r) for r in s{ SELECT ?s WHERE { ?s a {cls} . { SELECT ?s WHERE { ?s ?p ?o } } } }]
 for @bindings as row in m{ ?s ex:reading ?v }:
     +{ ?s ex:hasValue e{ ?v * 2 } }
+point = ex:Extension\.url.n3()
++{ ex:a\~b ex:p\.q 1 }

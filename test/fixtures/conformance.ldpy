@@ -25,11 +25,14 @@ def obs(ident, valeur):
 
 appel = obs(ex:x, _:{bn})
 liste = [ex:a, ex:b]
+point = ex:Extension\.url
+methode = ex:a\-b.n3()
 paire = (ex:a, _:{2})
 noeud = f{ "n" + str(1) }
 
 @graph as courant
 +{ ex:s ex:p 1 ; ex:q "deux"@fr }
++{ ex:a\~b ex:p\.q 1 }
 -{ ex:s ex:p ?any }
 
 lus = list(m{ ?s a ex:Sensor ; ex:v ?v })

@@ -468,3 +468,27 @@
 1309 " " -
 1310 "}" punctuation
 1311 "\n" -
+1318 "=" operator
+1319 " " -
+1320 "e" prefix
+1322 ":" punctuation
+1323 "E" local-name
+1337 "." punctuation
+1338 "n" -
+1340 "(" punctuation
+1342 "\n" -
+1343 "+" keyword
+1344 "{" punctuation
+1345 " " -
+1346 "e" prefix
+1348 ":" punctuation
+1349 "a" local-name
+1353 " " -
+1354 "e" prefix
+1356 ":" punctuation
+1357 "p" local-name
+1361 " " -
+1362 "1" number
+1363 " " -
+1364 "}" punctuation
+1365 "\n" -

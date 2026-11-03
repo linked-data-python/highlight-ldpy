@@ -75,6 +75,12 @@ const NOT_IN_DEF_PARAMS = String.raw`(?<!\bdef\s\w{1,80}\([^()]{0,300})`;
 
 const BT = '`';
 
+// PN_LOCAL_ESC de Turtle : `fhir:Extension\.url`. Le transpileur le lit dans
+// les îlots et hors îlots (ldpy/012) ; hors îlot, c'est la seule façon
+// d'écrire un point dans une partie locale, le point nu y étant un accès
+// d'attribut.
+const LOCAL_ESC = String.raw`\\[_~.\-!$&'()*+,;=/?#@%]`;
+
 const A = {
     /** préfixe d'un pname : un identifiant Python. */
     prefix: String.raw`[A-Za-z_]\w*`,
@@ -82,9 +88,9 @@ const A = {
     prefixDotted: String.raw`[A-Za-z_][\w.-]*`,
     /** partie locale STRICTE (hors îlot) : identifiant, éventuellement suivi
      *  d'une interpolation, ou interpolation seule. */
-    localStrict: String.raw`[A-Za-z_]\w*(?:\{[^}]*\})?|\{[^}]*\}`,
+    localStrict: String.raw`[A-Za-z_](?:\w|` + LOCAL_ESC + String.raw`)*(?:\{[^}]*\})?|\{[^}]*\}`,
     /** partie locale LÂCHE (dans un îlot) : points et tirets admis. */
-    localLoose: String.raw`[A-Za-z0-9_][\w.-]*`,
+    localLoose: String.raw`(?:[A-Za-z0-9_]|` + LOCAL_ESC + String.raw`)(?:[\w.-]|` + LOCAL_ESC + String.raw`)*`,
     /** étiquette de nœud vide : `_:b`, `_:{expr}`. */
     bnodeLabel: String.raw`\w+|\{[^}]*\}`,
     /** corps d'un IRIREF absolu. */

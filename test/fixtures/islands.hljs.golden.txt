@@ -420,3 +420,22 @@
 1309 " " -
 1310 "}" punctuation
 1311 "\n" -
+1320 "e" type
+1322 ":" punctuation
+1323 "E" title
+1337 "." -
+1343 "+" keyword
+1344 "{" punctuation
+1345 " " -
+1346 "e" type
+1348 ":" punctuation
+1349 "a" title
+1353 " " -
+1354 "e" type
+1356 ":" punctuation
+1357 "p" title
+1361 " " -
+1362 "1" number
+1363 " " -
+1364 "}" punctuation
+1365 "\n" -
